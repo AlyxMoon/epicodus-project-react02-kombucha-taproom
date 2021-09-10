@@ -1,6 +1,8 @@
 import { Component } from 'react'
 import views from './views'
 
+import * as api from './lib/api'
+
 class App extends Component {
   constructor () {
     super()
@@ -10,6 +12,13 @@ class App extends Component {
     }
   }
 
+  async componentDidMount () {
+    const products = await api.getProducts()
+    this.setState({
+      products,
+    })
+  }
+
   addProduct = (product) => {
     this.setState({
       products: [
@@ -17,6 +26,7 @@ class App extends Component {
         product,
       ],
     }, () => {
+      api.updateProducts(this.state.products)
       console.log('product list updated', this.state.products)
     })
   }
