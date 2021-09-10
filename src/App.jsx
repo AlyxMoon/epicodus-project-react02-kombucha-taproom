@@ -56,7 +56,7 @@ class App extends Component {
     this.setState({
       activeProduct: product,
       products: [
-        ...this.state.products.slice(0, Math.max(0, this.state.activeProductIndex - 1)),
+        ...this.state.products.slice(0, this.state.activeProductIndex),
         product,
         ...this.state.products.slice(this.state.activeProductIndex + 1),
       ],

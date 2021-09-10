@@ -141,9 +141,14 @@ input {
     color: white;
     border-color: black;
 
-    &:hover {
+    &:hover:not(:disabled) {
       background-color: rgb(15, 116, 129);
     }
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 }
 

@@ -23,7 +23,7 @@ const PageProductsDetails = ({ product, updateProduct }) => {
         <dd>{product.flavor}</dd>
 
         <dt>Pints Left</dt>
-        <dd>{product.pints === 0}</dd>
+        <dd>{product.pints || 'Out of Stock'}</dd>
       </dl>
 
       <p>{product.description}</p>
