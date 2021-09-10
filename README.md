@@ -5,6 +5,7 @@
 3. [Objectives](#objectives)
 4. [Further Exploration](#further-exploration)
 
+- **Live Website Link**: [https://alyxmoon.github.io/epicodus-project-react02-kombucha-taproom/](https://alyxmoon.github.io/epicodus-project-react02-kombucha-taproom/)
 - **Author**: Allister Moon Kays
 - **Copyright**: MIT License
 
