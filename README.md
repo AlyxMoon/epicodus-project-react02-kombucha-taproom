@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Epicodus | Friday Project | Kombucha Taproom
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. [Setting up Development](#setting-up-development)
+2. [Description](#description)
+3. [Objectives](#objectives)
+4. [Further Exploration](#further-exploration)
 
-## Available Scripts
+- **Author**: Allister Moon Kays
+- **Copyright**: MIT License
 
-In the project directory, you can run:
+## Setting up Development
 
-### `yarn start`
+Requirements:
+- NodeJS (assumed version 12 or higher)
+- npm or yarn
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Getting started with local development
+1. Open a terminal in the root of this project
+2. Run `npm install` or `yarn`
+3. Run `npm run start` or `yarn run start`
+4. Open a browser window on `http://localhost:3000`
+5. Profit!
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Description
 
-### `yarn test`
+Build a tap room in React where a bar or kombucha store can track their kegs. This could also be a soda fountain or another kind of tracker - as long as you're able to track the remaining amount and meet the objectives, you can be creative with this prompt.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Before getting started, plan out your application and draw a component tree or component diagram that shows the structure of your components. This is a requirement for the project and should be included in your README**. You may draw the structure on a piece of paper and take a picture of it or use an application like [https://www.draw.io/](https://www.draw.io/).
 
-### `yarn build`
+Keep in mind that you will only be expected to add CREATE and READ functionality, though you are welcome to implement full CRUD. Here are some user stories to get you started. The application should have the following functionality:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- As a user, I want to see a list/menu of all available kegs. For each keg, I want to see its name, brand, price and alcoholContent (or perhaps something like flavor for a kombucha store).
+- As a user, I want to submit a form to add a new keg to a list.
+- As a user, I want to be able to click on a keg to see its detail page.
+- As a user, I want to see how many pints are left in a keg. Hint: A full keg has roughly 124 pints.
+- As a user, I want to be able to click a button next to a keg whenever I sell a pint of it. This should decrease the number of pints left by 1. Pints should not be able to go below 0.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Objectives
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Your code will be reviewed for the following objectives:
+- Application compiles and runs and all required functionality is included.
+- Functional and class components are used correctly.
+- Application effectively uses local and shared state.
+- Props are used correctly and always include PropTypes.
+- README includes an accurate representation of the application's component tree.
+- Project is in a polished, portfolio-quality state.
+- The prompt’s required functionality and baseline project requirements are in place by the deadline.
 
-### `yarn eject`
+### What is a polished, portfolio-quality state?
+When a project is both polished and in a portfolio-quality state, this means:
+- You've reviewed your project and your README prior to submitting it to make sure there are no errors or missing information and you are consistent in your indentation, spacing, and code structure.
+- You are following the best practices and coding conventions we teach.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### What are the baseline project requirements?
+All independent coding projects at Epicodus have these baseline requirements:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- A complete and informative README
+- The project's commit history demonstrates that the project’s required work schedule and hours have been met:
+  - 8 hours completed on Friday is required for full-time students
+  - 4 hours completed over the weekend is required for part-time students
+- Completion of the project based on the prompt and objectives. The prompt contains details on the project's theme and features that are not always detailed in the objective. Carefully read through the prompt towards the end of your work session to make sure that you are not missing anything.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Further Exploration
+If you have time remaining after you complete the required objectives, work on the following user stories:
+- As a user, I want the option to edit a keg's properties after entering them just in case I make a mistake.
+- As a user, I want to be able to delete a keg.
+- As a user, I want a keg to update to say "Out of Stock" once it's empty.
+- As a user, I want kegs with less than 10 pints to include a message that says "Almost Empty" so I can try a pint before it's gone!
+- As a user, I want to have kegs prices to be color-coded for easy readability. This could be based on their price, the style of beer or kombucha, or the amount of pints left.
+- As a user, I want this application to be nicely styled. (Use stylesheets and CSS objects!)
