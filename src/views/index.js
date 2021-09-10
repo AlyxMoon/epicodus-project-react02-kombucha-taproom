@@ -15,3 +15,8 @@ export const PageHome = _PageHome
 export const PageProductsCreate = _PageProductsCreate
 export const PageProductsDetails = _PageProductsDetails
 export const PageProductsList = _PageProductsList
+
+export const PAGE_HOME = 0
+export const PAGE_PRODUCTS_CREATE = 1
+export const PAGE_PRODUCTS_DETAILS = 2
+export const PAGE_PRODUCTS_LIST = 3

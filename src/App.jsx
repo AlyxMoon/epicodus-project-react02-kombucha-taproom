@@ -1,13 +1,16 @@
 import { Component } from 'react'
-import views from './views'
 
+import views from './views'
 import * as api from './lib/api'
+
+import Navbar from './components/Navbar'
 
 class App extends Component {
   constructor () {
     super()
 
     this.state = {
+      activePage: 0,
       products: [],
     }
   }
@@ -16,6 +19,12 @@ class App extends Component {
     const products = await api.getProducts()
     this.setState({
       products,
+    })
+  }
+
+  setPage = (page) => {
+    this.setState({
+      activePage: Math.max(0, Math.min(page, views.length - 1)),
     })
   }
 
@@ -32,17 +41,21 @@ class App extends Component {
   }
 
   render () {
+    const ActiveView = views[this.state.activePage]
+
     return (
       <div className="app">
-        <h1>Kombucha Taproom</h1>
+        <Navbar 
+          activePage={this.state.activePage}
+          changePage={this.setPage}
+        />
 
-        {views.map((View, i) => (
-          <View 
-            key={i} 
+        <main>
+          <ActiveView 
             createProduct={this.addProduct}
-            products={this.state.products}
+              products={this.state.products}
           />
-        ))}
+        </main>
       </div>
     )
   }
