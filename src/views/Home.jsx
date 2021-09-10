@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
-import FeaturedProductList from '../components/FeaturedProductList'
+import ProductList from '../components/ProductList'
 
 const PageHome = ({ featuredProducts, seeProductDetails }) => {
   return (
@@ -12,7 +12,8 @@ const PageHome = ({ featuredProducts, seeProductDetails }) => {
 
       <hr />
 
-      <FeaturedProductList 
+      <ProductList
+        intro="Wow! These kegs sure are popular. Be sure to get some before they run out!"
         products={featuredProducts} 
         seeProductDetails={seeProductDetails} 
       />
