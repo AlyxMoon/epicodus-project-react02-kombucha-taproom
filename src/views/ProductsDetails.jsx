@@ -13,6 +13,9 @@ const PageProductsDetails = ({ product }) => {
 
         <dt>Flavor</dt>
         <dd>{product.flavor}</dd>
+
+        <dt>Pints Left</dt>
+        <dd>{product.pints}</dd>
       </dl>
 
       <p>{product.description}</p>
@@ -26,6 +29,8 @@ PageProductsDetails.propTypes = {
     brand: PropTypes.string,
     price: PropTypes.number,
     flavor: PropTypes.string,
+    description: PropTypes.string,
+    pints: PropTypes.number,
   }).isRequired,
 }
 

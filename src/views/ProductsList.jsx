@@ -26,6 +26,9 @@ const PageProductsList = ({ products, seeProductDetails }) => {
             <dt>Flavor</dt>
             <dd>{product.flavor}</dd>
 
+            <dt>Pints Left</dt>
+            <dd>{product.pints}</dd>
+
             <dt></dt>
             <dd>
               <a 
@@ -49,6 +52,8 @@ PageProductsList.propTypes = {
     brand: PropTypes.string,
     price: PropTypes.number,
     flavor: PropTypes.string,
+    description: PropTypes.string,
+    pints: PropTypes.number,
   })),
   seeProductDetails: PropTypes.func,
 }

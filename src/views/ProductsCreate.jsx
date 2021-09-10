@@ -9,6 +9,7 @@ const PageProductsCreate = ({
     brand: '',
     price: '',
     flavor: '',
+    description: '',
     pints: 120,
   })
 
@@ -30,6 +31,7 @@ const PageProductsCreate = ({
     { name: 'brand', label: 'Brand', type: 'text' },
     { name: 'price', label: 'Price', type: 'number' },
     { name: 'flavor', label: 'Flavor', type: 'text' },
+    { name: 'description', label: 'Description', type: 'text' },
   ]
 
   return (
