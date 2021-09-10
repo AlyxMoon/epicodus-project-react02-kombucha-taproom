@@ -1,0 +1,41 @@
+.featured-products-list {
+  article {
+    border: 1px solid black;
+
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+
+    margin: 2em 0;
+
+    .name-box {
+      flex: 0 1 150px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      background-color: #444444;
+      color: white;
+      text-align: center;
+    }
+
+    .summary-box {
+      flex: 1 1 auto;
+
+      padding: 1em;
+      
+      .btn {
+        width: 100%;
+      }
+    }
+
+    .details-box {
+      flex: 1 1 66%;
+      border-left: 1px solid black;
+
+      padding: 2em;
+    }
+  }
+}

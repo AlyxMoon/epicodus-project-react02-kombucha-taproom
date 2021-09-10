@@ -1,6 +1,8 @@
+import { v4 as uuid } from 'uuid'
 
 const defaultProducts = [
   {
+    id: uuid(),
     name: 'Health-Ade',
     brand: 'Health-Right',
     price: 6,
@@ -9,6 +11,7 @@ const defaultProducts = [
     description: 'Ready for a delicious and healthy taste bud experience? Get health-ade!',
   },
   {
+    id: uuid(),
     name: 'Strawberry Yum',
     brand: 'Health-Right',
     price: 8,
@@ -17,6 +20,7 @@ const defaultProducts = [
     description: 'Our seasonal classic. Fresh organic strawberries combined with fresh herbs combine to make a treat that everyone can enjoy. Get a glass while supplies last!',
   },
   {
+    id: uuid(),
     name: 'Rowdy Earth',
     brand: 'Rough Tongue Tonics',
     price: 5,
@@ -25,14 +29,16 @@ const defaultProducts = [
     description: 'Two flavors you don\'t typically see together. But you aren\'t typical. You\'re tough, and you need a drink to match. With fresh, strong ingredients from the earth, this drink will revitalize you and give you the energy you need to keep on trucking.',
   },
   {
+    id: uuid(),
     name: 'Tea You In Hell',
     brand: 'Rough Tongue Tonics',
     price: 9,
-    pints: 54,
+    pints: 14,
     flavor: 'green tea, jalapeno',
-    description: 'You would wish this drink on your greatest friend, because it\'ll see you through thick and thin. When the times are tough and you need some tough love back, throw back a glass infused with the most righteous of jalapenos and get your act together.',
+    description: 'You would wish this drink on your greatest friend, because it\'ll see you through thick and thin. When the times are tough and you need some tough love back, throw back a glass Tea You In Hell and get your act together.',
   },
   {
+    id: uuid(),
     name: 'Blueberry Lemon',
     brand: 'Simple',
     price: 3,
@@ -41,6 +47,7 @@ const defaultProducts = [
     description: 'We don\'t believe in wasting time with slogans. We make kombucha, enjoy.',
   },
   {
+    id: uuid(),
     name: 'Apple Cinammon',
     brand: 'Simple',
     price: 3,

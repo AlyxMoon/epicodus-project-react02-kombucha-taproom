@@ -32,11 +32,13 @@ class App extends Component {
     })
   }
 
-  seeProductDetails = (productIndex = -1) => {
+  seeProductDetails = (id) => {
+    const index = this.state.products.findIndex(product => product.id === id)
+
     this.setState({
       activePage: PAGE_PRODUCTS_DETAILS,
-      activeProduct: productIndex === -1 ? {} : this.state.products[productIndex],
-      activeProductIndex: productIndex,
+      activeProduct: index === -1 ? {} : this.state.products[index],
+      activeProductIndex: index,
     })
   }
 
@@ -68,6 +70,10 @@ class App extends Component {
   render () {
     const ActiveView = views[this.state.activePage]
 
+    const featuredProducts = this.state.products.filter(product => {
+      return product.pints > 0 && product.pints < 15
+    })
+
     return (
       <div className="app">
         <Navbar 
@@ -80,6 +86,7 @@ class App extends Component {
             createProduct={this.addProduct}
             updateProduct={this.updateActiveProduct}
             products={this.state.products}
+            featuredProducts={featuredProducts}
             product={this.state.activeProduct}
             seeProductDetails={this.seeProductDetails}
           />

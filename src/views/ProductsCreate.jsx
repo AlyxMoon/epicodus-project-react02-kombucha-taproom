@@ -1,10 +1,12 @@
 import { Fragment, useState } from 'react'
 import PropTypes from 'prop-types'
+import { v4 as uuid } from 'uuid'
 
 const PageProductsCreate = ({ 
   createProduct,
 }) => {
   const [product, setProduct] = useState({
+    id: uuid(),
     name: '',
     brand: '',
     price: '',

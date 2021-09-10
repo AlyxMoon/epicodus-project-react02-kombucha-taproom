@@ -4,7 +4,7 @@ const PageProductsList = ({ products, seeProductDetails }) => {
 
   const handleLinkClick = (event, index) => {
     event.preventDefault()
-    seeProductDetails(index)
+    seeProductDetails(products[index].id)
   }
 
   return (
