@@ -1,6 +1,14 @@
 import PropTypes from 'prop-types'
 
-const PageProductsDetails = ({ product }) => {
+const PageProductsDetails = ({ product, updateProduct }) => {
+
+  const handleBuyPint = () => {
+    updateProduct({
+      ...product,
+      pints: Math.max(0, product.pints - 1),
+    })
+  }
+
   return (
     <section className="product-details-page">
       <h2>{product.name}</h2>
@@ -15,10 +23,18 @@ const PageProductsDetails = ({ product }) => {
         <dd>{product.flavor}</dd>
 
         <dt>Pints Left</dt>
-        <dd>{product.pints}</dd>
+        <dd>{product.pints === 0}</dd>
       </dl>
 
       <p>{product.description}</p>
+
+      <div>
+        <button 
+          className="btn btn-primary"
+          onClick={handleBuyPint}
+          disabled={product.pints <= 0}
+        >Buy a Pint</button>
+      </div>
     </section>
   )
 }
@@ -32,6 +48,13 @@ PageProductsDetails.propTypes = {
     description: PropTypes.string,
     pints: PropTypes.number,
   }).isRequired,
+  updateProduct: PropTypes.func,
+}
+
+PageProductsDetails.defaultProps = {
+  updateProduct: (product) => {
+    console.log('test update product:', product)
+  },
 }
 
 export default PageProductsDetails

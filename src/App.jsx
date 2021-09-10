@@ -12,6 +12,7 @@ class App extends Component {
     this.state = {
       activePage: 0,
       activeProduct: {},
+      activeProductIndex: -1,
       products: [],
     }
   }
@@ -27,6 +28,7 @@ class App extends Component {
     this.setState({
       activePage: Math.max(0, Math.min(page, views.length - 1)),
       activeProduct: {},
+      activeProductIndex: -1,
     })
   }
 
@@ -34,6 +36,7 @@ class App extends Component {
     this.setState({
       activePage: PAGE_PRODUCTS_DETAILS,
       activeProduct: productIndex === -1 ? {} : this.state.products[productIndex],
+      activeProductIndex: productIndex,
     })
   }
 
@@ -46,6 +49,19 @@ class App extends Component {
     }, () => {
       api.updateProducts(this.state.products)
       console.log('product list updated', this.state.products)
+    })
+  }
+
+  updateActiveProduct = (product) => {
+    this.setState({
+      activeProduct: product,
+      products: [
+        ...this.state.products.slice(0, Math.max(0, this.state.activeProductIndex - 1)),
+        product,
+        ...this.state.products.slice(this.state.activeProductIndex + 1),
+      ],
+    }, () => {
+      api.updateProducts(this.state.products)
     })
   }
 
@@ -62,6 +78,7 @@ class App extends Component {
         <main>
           <ActiveView 
             createProduct={this.addProduct}
+            updateProduct={this.updateActiveProduct}
             products={this.state.products}
             product={this.state.activeProduct}
             seeProductDetails={this.seeProductDetails}
