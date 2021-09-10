@@ -48,6 +48,7 @@ class App extends Component {
         ...this.state.products,
         product,
       ],
+      activePage: PAGE_PRODUCTS_LIST,
     }, () => {
       api.updateProducts(this.state.products)
       console.log('product list updated', this.state.products)
