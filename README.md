@@ -9,6 +9,12 @@
 - **Author**: Allister Moon Kays
 - **Copyright**: MIT License
 
+<details>
+  <summary>See Component/Page Map</summary>
+
+  ![Component and Page Map](/planning/epicodus-project-react02-diagram.drawio.png)
+</details>
+
 ## Setting up Development
 
 Requirements:
