@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 import PropTypes from 'prop-types'
 
 const PageProductsCreate = ({ 
@@ -21,15 +21,15 @@ const PageProductsCreate = ({
   const handleUpdate = (value, property) => {
     setProduct({
       ...product,
-      [property]: value,
+      [property]: property === 'price' ? parseInt(value) : value,
     })
   }
 
   const productFields = [
-    { name: 'name', label: 'Name' },
-    { name: 'brand', label: 'Brand' },
-    { name: 'price', label: 'Price' },
-    { name: 'flavor', label: 'Flavor' },
+    { name: 'name', label: 'Name', type: 'text' },
+    { name: 'brand', label: 'Brand', type: 'text' },
+    { name: 'price', label: 'Price', type: 'number' },
+    { name: 'flavor', label: 'Flavor', type: 'text' },
   ]
 
   return (
@@ -37,16 +37,17 @@ const PageProductsCreate = ({
       <h1>Product Create</h1>
 
       {productFields.map(field => (
-        <>
-          <label key={`label-${field.name}`}>
+        <Fragment key={field.name}>
+          <label>
             {field.label}
           </label>
           <input
-            key={`name-${field.name}`}
+            required
+            type={field.type}
             value={product[field.name]}
             onChange={(event) => handleUpdate(event.target.value, field.name)}
           />
-        </>
+        </Fragment>
       ))}
 
 
