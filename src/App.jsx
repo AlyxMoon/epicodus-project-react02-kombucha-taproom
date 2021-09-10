@@ -1,10 +1,17 @@
+import { Component } from 'react'
+import views from './views'
 
-function App () {
-  return (
-    <div className="app">
-      <h1>Kombucha Taproom</h1>
-    </div>
-  )
+class App extends Component {
+  render () {
+
+    return (
+      <div className="app">
+        <h1>Kombucha Taproom</h1>
+
+        {views.map(View => <View />)}
+      </div>
+    )
+  }
 }
 
 export default App
