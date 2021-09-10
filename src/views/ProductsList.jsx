@@ -1,6 +1,12 @@
 import PropTypes from 'prop-types'
 
-const PageProductsList = ({ products }) => {
+const PageProductsList = ({ products, seeProductDetails }) => {
+
+  const handleLinkClick = (event, index) => {
+    event.preventDefault()
+    seeProductDetails(index)
+  }
+
   return (
     <>
       <h1>Product List</h1>
@@ -19,6 +25,17 @@ const PageProductsList = ({ products }) => {
 
             <dt>Flavor</dt>
             <dd>{product.flavor}</dd>
+
+            <dt></dt>
+            <dd>
+              <a 
+                href={`/products/${i}`}
+                className="btn btn-primary"
+                onClick={(event) => handleLinkClick(event, i)}
+              >
+                See Details
+              </a>
+            </dd>
           </dl>
         </div>
       ))}
@@ -33,10 +50,14 @@ PageProductsList.propTypes = {
     price: PropTypes.number,
     flavor: PropTypes.string,
   })),
+  seeProductDetails: PropTypes.func,
 }
 
 PageProductsList.defaultProps = {
   products: [],
+  seeProductDetails: (i) => {
+    console.log('test see product details:', i)
+  },
 }
 
 export default PageProductsList

@@ -123,13 +123,18 @@ input {
   cursor: pointer;
 
   background-color: white;
-  border: 1px solid transparent;
+  border: 1px solid black;
   border-radius: 4px;
   color: black;
 
   font-size: 1rem;
+  text-decoration: none;
 
   transition-duration: 0.3s;
+
+  &:hover {
+    background-color: #EEEEEE;
+  }
 
   &.btn-primary {
     background-color: rgb(9, 149, 168);

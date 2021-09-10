@@ -1,6 +1,6 @@
 import { Component } from 'react'
 
-import views from './views'
+import views, { PAGE_PRODUCTS_DETAILS } from './views'
 import * as api from './lib/api'
 
 import Navbar from './components/Navbar'
@@ -11,6 +11,7 @@ class App extends Component {
 
     this.state = {
       activePage: 0,
+      activeProduct: {},
       products: [],
     }
   }
@@ -25,6 +26,14 @@ class App extends Component {
   setPage = (page) => {
     this.setState({
       activePage: Math.max(0, Math.min(page, views.length - 1)),
+      activeProduct: {},
+    })
+  }
+
+  seeProductDetails = (productIndex = -1) => {
+    this.setState({
+      activePage: PAGE_PRODUCTS_DETAILS,
+      activeProduct: productIndex === -1 ? {} : this.state.products[productIndex],
     })
   }
 
@@ -53,7 +62,9 @@ class App extends Component {
         <main>
           <ActiveView 
             createProduct={this.addProduct}
-              products={this.state.products}
+            products={this.state.products}
+            product={this.state.activeProduct}
+            seeProductDetails={this.seeProductDetails}
           />
         </main>
       </div>
