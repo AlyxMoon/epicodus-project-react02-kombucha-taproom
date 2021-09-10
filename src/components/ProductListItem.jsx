@@ -1,9 +1,14 @@
 import PropTypes from 'prop-types'
 
-const ProductListItem = ({ product, seeProductDetails }) => {
+const ProductListItem = ({ product, seeProductDetails, removeProduct }) => {
   const handleLinkClick = (event) => {
     event.preventDefault()
     seeProductDetails(product.id)
+  }
+
+  const handleRemove = (event) => {
+    event.preventDefault()
+    removeProduct(product.id)
   }
 
   return (
@@ -31,6 +36,13 @@ const ProductListItem = ({ product, seeProductDetails }) => {
         >
           See Details
         </a>
+        <a
+          href={`/products/${product.id}/delete`}
+          className="btn btn-danger"
+          onClick={handleRemove}
+        >
+          Remove Keg
+        </a>
       </div>
 
       <div className="details-box">
@@ -50,6 +62,7 @@ ProductListItem.propTypes = {
     pints: PropTypes.number,
   })),
   seeProductDetails: PropTypes.func,
+  removeProduct: PropTypes.func,
 }
 
 export default ProductListItem

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import './FeaturedProductList.scss'
 import ProductListItem from './ProductListItem'
 
-const ProductList = ({ products, seeProductDetails, intro }) => {
+const ProductList = ({ products, seeProductDetails, removeProduct, intro }) => {
   return (
     <section className="featured-products-list">
       {intro && (<h3>{intro}</h3>)}
@@ -13,6 +13,7 @@ const ProductList = ({ products, seeProductDetails, intro }) => {
           key={product.id}
           product={product} 
           seeProductDetails={seeProductDetails}
+          removeProduct={removeProduct}
         />
       ))}
     </section>
@@ -30,6 +31,7 @@ ProductList.propTypes = {
     pints: PropTypes.number,
   })),
   seeProductDetails: PropTypes.func,
+  removeProduct: PropTypes.func,
 }
 
 export default ProductList

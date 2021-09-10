@@ -146,6 +146,16 @@ input {
     }
   }
 
+  &.btn-danger {
+    background-color: rgb(170, 7, 7);
+    color: white;
+    border-color: black;
+
+    &:hover:not(:disabled) {
+      background-color: rgb(144, 9, 9);
+    }
+  }
+
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;

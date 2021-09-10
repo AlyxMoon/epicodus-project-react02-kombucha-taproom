@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import ProductList from '../components/ProductList'
 
-const PageHome = ({ featuredProducts, seeProductDetails }) => {
+const PageHome = ({ featuredProducts, seeProductDetails, removeProduct }) => {
   return (
     <Fragment>
       <h2>Welcome to the taproom!</h2>
@@ -15,7 +15,8 @@ const PageHome = ({ featuredProducts, seeProductDetails }) => {
       <ProductList
         intro="Wow! These kegs sure are popular. Be sure to get some before they run out!"
         products={featuredProducts} 
-        seeProductDetails={seeProductDetails} 
+        seeProductDetails={seeProductDetails}
+        removeProduct={removeProduct}
       />
     </Fragment>
   )
@@ -31,6 +32,7 @@ PageHome.propTypes = {
     pints: PropTypes.number,
   })),
   seeProductDetails: PropTypes.func,
+  removeProduct: PropTypes.func,
 }
 
 export default PageHome

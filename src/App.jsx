@@ -1,6 +1,6 @@
 import { Component } from 'react'
 
-import views, { PAGE_PRODUCTS_DETAILS } from './views'
+import views, { PAGE_PRODUCTS_DETAILS, PAGE_PRODUCTS_LIST } from './views'
 import * as api from './lib/api'
 
 import Navbar from './components/Navbar'
@@ -67,6 +67,24 @@ class App extends Component {
     })
   }
 
+  removeProduct = (id) => {
+    const index = this.state.products.findIndex(product => product.id === id)
+    if (index < 0) return
+
+    this.setState({
+      activeProduct: {},
+      products: [
+        ...this.state.products.slice(0, index),
+        ...this.state.products.slice(index + 1),
+      ],
+      activePage: this.state.activePage === PAGE_PRODUCTS_DETAILS
+        ? PAGE_PRODUCTS_LIST
+        : this.state.activePage,
+    }, () => {
+      api.updateProducts(this.state.products)
+    })
+  }
+
   render () {
     const ActiveView = views[this.state.activePage]
 
@@ -85,6 +103,7 @@ class App extends Component {
           <ActiveView 
             createProduct={this.addProduct}
             updateProduct={this.updateActiveProduct}
+            removeProduct={this.removeProduct}
             products={this.state.products}
             featuredProducts={featuredProducts}
             product={this.state.activeProduct}
