@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/epicodus-project-react02-kombucha-taproom/static/css/main.92f31f51.chunk.css",
-    "main.js": "/epicodus-project-react02-kombucha-taproom/static/js/main.00430df8.chunk.js",
-    "main.js.map": "/epicodus-project-react02-kombucha-taproom/static/js/main.00430df8.chunk.js.map",
+    "main.css": "/epicodus-project-react02-kombucha-taproom/static/css/main.3eed1bdc.chunk.css",
+    "main.js": "/epicodus-project-react02-kombucha-taproom/static/js/main.e23298f9.chunk.js",
+    "main.js.map": "/epicodus-project-react02-kombucha-taproom/static/js/main.e23298f9.chunk.js.map",
     "runtime-main.js": "/epicodus-project-react02-kombucha-taproom/static/js/runtime-main.4f93deda.js",
     "runtime-main.js.map": "/epicodus-project-react02-kombucha-taproom/static/js/runtime-main.4f93deda.js.map",
-    "static/js/2.b53cc4c7.chunk.js": "/epicodus-project-react02-kombucha-taproom/static/js/2.b53cc4c7.chunk.js",
-    "static/js/2.b53cc4c7.chunk.js.map": "/epicodus-project-react02-kombucha-taproom/static/js/2.b53cc4c7.chunk.js.map",
+    "static/js/2.e3eabe83.chunk.js": "/epicodus-project-react02-kombucha-taproom/static/js/2.e3eabe83.chunk.js",
+    "static/js/2.e3eabe83.chunk.js.map": "/epicodus-project-react02-kombucha-taproom/static/js/2.e3eabe83.chunk.js.map",
     "index.html": "/epicodus-project-react02-kombucha-taproom/index.html",
-    "static/css/main.92f31f51.chunk.css.map": "/epicodus-project-react02-kombucha-taproom/static/css/main.92f31f51.chunk.css.map",
-    "static/js/2.b53cc4c7.chunk.js.LICENSE.txt": "/epicodus-project-react02-kombucha-taproom/static/js/2.b53cc4c7.chunk.js.LICENSE.txt"
+    "static/css/main.3eed1bdc.chunk.css.map": "/epicodus-project-react02-kombucha-taproom/static/css/main.3eed1bdc.chunk.css.map",
+    "static/js/2.e3eabe83.chunk.js.LICENSE.txt": "/epicodus-project-react02-kombucha-taproom/static/js/2.e3eabe83.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4f93deda.js",
-    "static/js/2.b53cc4c7.chunk.js",
-    "static/css/main.92f31f51.chunk.css",
-    "static/js/main.00430df8.chunk.js"
+    "static/js/2.e3eabe83.chunk.js",
+    "static/css/main.3eed1bdc.chunk.css",
+    "static/js/main.e23298f9.chunk.js"
   ]
 }
