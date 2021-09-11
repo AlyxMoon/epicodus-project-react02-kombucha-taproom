@@ -8,6 +8,14 @@
 
     margin: 2em 0;
 
+    background-color: white;
+
+    &.removing {
+      animation: throwAway 2s linear;
+      position: relative;
+      z-index: 100;
+    }
+
     .name-box {
       flex: 0 1 150px;
 
@@ -38,5 +46,21 @@
 
       padding: 2em;
     }
+  }
+}
+
+@keyframes throwAway {
+  0% {
+    transform: rotateZ(0deg) scale(0.8);
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: rotateZ(1200deg) scale(0.1);
+    top: -200vh;
+    left: 200vw;
+    opacity: 0;
   }
 }

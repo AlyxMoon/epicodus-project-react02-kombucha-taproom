@@ -1,18 +1,28 @@
+import { useState } from 'react'
 import PropTypes from 'prop-types'
 
+import waitFor from '../lib/waitFor'
+
 const ProductListItem = ({ product, seeProductDetails, removeProduct }) => {
+  const [removingItem, setRemovingItem] = useState(false)
+
   const handleLinkClick = (event) => {
     event.preventDefault()
     seeProductDetails(product.id)
   }
 
-  const handleRemove = (event) => {
+  const handleRemove = async (event) => {
     event.preventDefault()
+    setRemovingItem(true)
+
+    await waitFor(2100)
+
     removeProduct(product.id)
+    setRemovingItem(false)
   }
 
   return (
-    <article>
+    <article className={removingItem ? 'removing' : ''}>
       <div className="name-box">
         <h4>{product.name}</h4>
         <p>{product.brand}</p>
@@ -40,6 +50,7 @@ const ProductListItem = ({ product, seeProductDetails, removeProduct }) => {
           href={`/products/${product.id}/delete`}
           className="btn btn-danger"
           onClick={handleRemove}
+          disabled={removingItem}
         >
           Remove Keg
         </a>

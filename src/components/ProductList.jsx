@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-import './FeaturedProductList.scss'
+import './ProductList.scss'
 import ProductListItem from './ProductListItem'
 
 const ProductList = ({ products, seeProductDetails, removeProduct, intro }) => {
